@@ -34,7 +34,7 @@ var checkForMatch = function(){
 		alert('You found a match!');
 		//this is to track the points, to push it to array so we can get the length
 		scoredPoints.push('point');
-		console.log(scoredPoints.length);
+		console.log('Points: ' + scoredPoints.length);
 	}
 	else{
 		alert('Sorry, try again :(');
@@ -72,7 +72,7 @@ createBoard();
 
 //reseting board
 var reset = function(){
-	var button = document.getElementById('button');
+	var button = document.getElementsByTagName('button');
 	location.reload();
 	button.addEventListener('click', reset);
 }

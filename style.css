@@ -64,6 +64,9 @@ p{
 	color: #F15B31;
 	font-weight: 700;
 }
+button{
+	margin-top: 15px;
+}
 footer{
 	text-transform: uppercase;
 	margin-top: 20px;
