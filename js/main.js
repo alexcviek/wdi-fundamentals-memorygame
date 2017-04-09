@@ -25,10 +25,16 @@ var cards = [
 //array of cards in play
 var cardsInPlay = [];
 
+//array to track the score
+var scoredPoints = [];
+
 //checking if both cards selected are the same
 var checkForMatch = function(){
-	if(cardsInPlay[0] === cardsInPlay[1]){
+	if(cardsInPlay[0] === cardsInPlay[1] || cardsInPlay[2] === cardsInPlay[3]){
 		alert('You found a match!');
+		//this is to track the points, to push it to array so we can get the length
+		scoredPoints.push('point');
+		console.log(scoredPoints.length);
 	}
 	else{
 		alert('Sorry, try again :(');
@@ -40,22 +46,18 @@ var cardId = this.getAttribute('data-id');
 
 
 console.log("User flipped " + cards[cardId].rank);
-console.log(cards[cardId].suit);
-console.log(cards[cardId].cardImage);
+
 //card goes to our cards in play array
 cardsInPlay.push(cards[cardId].rank);
 
 this.setAttribute('src', cards[cardId].cardImage);
 
-//check if user has chosen 2 cards
-if(cardsInPlay.length === 2){
+//check if user has chosen even number of cards
+if(cardsInPlay.length === 2 || cardsInPlay.length === 4){
 	checkForMatch();
-}
-	else{
-		//to be completed!
 	}
 }
-
+//creating the board of cards
 var createBoard = function(){
 	for (var i = 0; i < cards.length; i++){
 		var cardElement = document.createElement('img');
@@ -67,3 +69,11 @@ var createBoard = function(){
 }
 
 createBoard();
+
+//reseting board
+var reset = function(){
+	var button = document.getElementById('button');
+	location.reload();
+	button.addEventListener('click', reset);
+}
+
