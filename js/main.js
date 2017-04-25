@@ -32,9 +32,10 @@ var scoredPoints = [];
 var checkForMatch = function(){
 	if(cardsInPlay[0] === cardsInPlay[1] || cardsInPlay[2] === cardsInPlay[3]){
 		alert('You found a match!');
-		//this is to track the points, to push it to array so we can get the length
+		//this is to track the points, to push it to array so we can get the length, length = score
 		scoredPoints.push('point');
-		console.log('Points: ' + scoredPoints.length);
+		var score = scoredPoints.length;
+		document.getElementById("score").innerHTML = score;
 	}
 	else{
 		alert('Sorry, try again :(');
