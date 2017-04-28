@@ -44,7 +44,8 @@ var checkForMatch = function(){
 //when user flips the card
 var flipCard = function(){
 var cardId = this.getAttribute('data-id');
-
+//this would be to randomize cards, but when running this checkForMatch doesn't work
+//var cardId = Math.floor(Math.random()*cards.length);
 
 console.log("User flipped " + cards[cardId].rank);
 
